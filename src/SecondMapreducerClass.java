@@ -1,3 +1,7 @@
+//   Written by Bharat Chand Goli
+//	 NYSE stock analysis using Mapreduce
+// 	 Running successfully on the cluster with 3 nodes (master - slave1 - slave2)
+//	 Second job mapper and reducer class
 
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
@@ -24,10 +28,6 @@ public class SecondMapreducerClass {
     }
 
 
-    /**
-     * input: <key, value>, key = Text, value: number of occurrence
-     * output: <key, value>, key = Text, value = number of occurrence
-     * */
 
     public static class SecondReducer extends Reducer<Text, Text, Text, Text> {
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {

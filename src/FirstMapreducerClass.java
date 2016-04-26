@@ -1,3 +1,8 @@
+//   Written by Bharat Chand Goli
+//	 NYSE stock analysis using Mapreduce
+// 	 Running successfully on the cluster with 3 nodes (master - slave1 - slave2)
+//	 First job mapper and reducer class
+
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -40,11 +45,6 @@ public class FirstMapreducerClass {
         }
 
 
-    /**
-     * input: <key, value>, key = Text, value: number of occurrence
-     * output: <key, value>, key = Text, value = number of occurrence
-     *
-     * */
 
     public static class FirstReducer extends Reducer<Text, Text, Text, Text> {
 

@@ -1,3 +1,8 @@
+//   Written by Bharat Chand Goli
+//	 NYSE stock analysis using Mapreduce
+// 	 Running successfully on the cluster with 3 nodes (master - slave1 - slave2) --> h-usr
+//	 Main Driver code
+
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;

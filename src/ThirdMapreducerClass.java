@@ -1,3 +1,7 @@
+//   Written by Bharat Chand Goli
+//	 NYSE stock analysis using Mapreduce
+// 	 Running successfully on the cluster with 3 nodes (master - slave1 - slave2)
+//	 Third job mapper and reducer class
 
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
@@ -37,13 +41,13 @@ public class ThirdMapreducerClass {
 
             try {
 
-                context.write(new Text("Top 5 lowest volatility companies"), new Text(""));
+                context.write(new Text("Top 10 lowest volatility companies"), new Text(""));
                 context.write(new Text("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"), new Text(""));
-                for(int i = 0; i < 5; i++){
+                for(int i = 0; i < 10; i++){
                     context.write(new Text(list.get(i).split(" ")[1]), new Text(list.get(i).split(" ")[0]));
                 }
 
-                context.write(new Text("\nTop 10 highest volatility companies"), new Text(""));
+                context.write(new Text("\n Top 10 highest volatility companies"), new Text(""));
                 context.write(new Text("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"), new Text(""));
 
                 for(int i = list.size() - 1; i >= list.size() - 10; i--){
